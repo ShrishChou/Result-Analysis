@@ -1,0 +1,100 @@
+{% extends 'main.html' %} {% block content %} {% include 'base/navbar.html' %}
+<div class="backgrnd">
+  <div class="profilestyle">
+    <h1 class="pt">{{player.name}}</h1>
+    <div class="graphs">
+      <div class="graph">
+        <!-- Display the UTR graph image -->
+        <img
+          src="data:image/png;base64,{{ utr_graph }}"
+          alt="UTR Graph"
+          class="graphimg"
+        />
+      </div>
+
+      <div class="graph">
+        <!-- Display the High graph image -->
+        <img
+          src="data:image/png;base64,{{ high_graph }}"
+          alt="High Graph"
+          class="graphimg"
+        />
+      </div>
+
+      <div class="graph">
+        <!-- Display the Low graph image -->
+        <img
+          src="data:image/png;base64,{{ low_graph }}"
+          alt="Low Graph"
+          class="graphimg"
+        />
+      </div>
+    </div>
+    <div class="matches">
+      <div>
+        <h3 class="titlemw">Singles Matches</h3>
+        <hr />
+        {% for i in singles_matches%}
+        <div>
+          {% if i.win %}
+          <p class="descw">
+            <span class="spec">{{i.player1}}</span> beat
+            <span class="spec">{{i.player2}}</span><br />
+            <span class="spec">{{i.score}}</span>
+          </p>
+          {% else %}
+          <p class="descl">
+            <span class="spec">{{i.player1}}</span> lost to
+            <span class="spec">{{i.player2}}</span><br />
+            <span class="spec">{{i.score}}</span>
+          </p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      <div>
+        <h3 class="titlemw">Doubles Matches</h3>
+        <hr />
+        {% for i in doubles_matches%}
+        <div>
+          {% if i.win %}
+          <p class="descw">
+            <span class="spec">{{i.player1}}</span> and
+            <span class="spec">{{i.player2}}</span> beat
+            <span class="spec">{{i.player3}}</span> and
+            <span class="spec">{{i.player4}}</span><br />
+            <span class="spec">{{i.score}}</span>
+          </p>
+          {% else %}
+          <p class="descl">
+            <span class="spec">{{i.player1}}</span> and
+            <span class="spec">{{i.player2}}</span> lost to
+            <span class="spec">{{i.player3}}</span> and
+            <span class="spec">{{i.player4}}</span><br />
+            <span class="spec">{{i.score}}</span>
+          </p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      <div class="stats">
+        <div>
+          <h3>Matches Played: {{player.game_played}}</h3>
+        </div>
+        <div>
+          <h3>Singles: {{singles}}</h3>
+        </div>
+        <div>
+          <h3>Singles wins: {{singleswins}}</h3>
+        </div>
+        <div>
+          <h3>Doubles: {{doubles}}</h3>
+        </div>
+        <div>
+          <h3>Doubles wins: {{doubleswins}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

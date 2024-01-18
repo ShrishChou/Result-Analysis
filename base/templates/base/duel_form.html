@@ -1,0 +1,20 @@
+{% extends 'main.html' %} {% block content %} {% include 'base/navbar.html' %}
+
+<form method="post" action="{% url 'duel-form' %}">
+  {% csrf_token %}
+  <div class="formstop">{{ duel_form.as_p }}</div>
+  <div class="form-wrapper">
+    <div>
+      {{ singles_formset.management_form }} {%for form in singles_formset %}
+      <div class="form-singles">{{form.as_p }}</div>
+      {% endfor %}
+    </div>
+    <div>
+      {{ doubles_formset.management_form }} {%for form in doubles_formset %}
+      <div class="form-doubles">{{form.as_p }}</div>
+      {% endfor %}
+    </div>
+  </div>
+  <input type="submit" />
+</form>
+{% endblock content %}

@@ -1,0 +1,16 @@
+<div class="nav">
+  <div>
+    <h1>
+      &nbsp;&nbsp;<a class="navtitle" href="{% url 'home' %}"
+        >MIT Mens Tennis</a
+      >
+    </h1>
+  </div>
+  <div>
+    <a class="links" href="{% url 'teamstats' %}">Team Results</a>
+  </div>
+  <div>
+    <a class="links" href="{% url 'players' %}">Individual Results</a>
+  </div>
+</div>
+{% block content %} {% endblock content%}

@@ -1,0 +1,317 @@
+
+.nav {
+    width: 100%;
+    background-color: grey;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1.5fr;
+    align-items: center;
+    border-radius: 30px;
+    
+  }
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    background-image: url('/static/images/mitath.jpg');
+    background-repeat: repeat;
+    overflow-x: hidden;
+}
+
+.mainscreen{
+    width: 90vw;
+}
+.appeal{
+    width: 90vw;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+}
+.logo-use{
+    width:auto;
+    height:50vh;
+    padding-top: 5vh;
+    padding-left: 5vw;
+}
+
+input[type=text] {
+    font-size: large;
+    width: 30vw;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 30vw;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.form-singles{
+    color: white;
+    font-size: 25px;
+    background-image: linear-gradient(to right,rgba(7, 0, 0, 0.799), rgba(46, 46, 46, 0.758));  
+    padding-left: 10px; 
+    padding-bottom: 0.5vh; 
+    padding-top: 0.5vh; 
+    margin: 2px;
+}
+.form-doubles{
+    color: white;
+    font-size: 25px;
+    background-image: linear-gradient(to right,rgba(7, 0, 0, 0.799), rgba(46, 46, 46, 0.758));  
+    padding-left: 10px; 
+    padding-bottom: 1vh; 
+    padding-top: 1vh; 
+    margin: 2px;
+}
+.formstop{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    background-image: linear-gradient(to right,rgba(7, 0, 0, 0.799), rgba(43, 4, 4, 0.758));  
+    padding-left: 4vw; 
+    padding-bottom: 1vh; 
+    padding-top: 1vh; 
+    margin: 2px;
+}
+.form-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.navtitle{
+    color:black;
+    text-decoration: none;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5vh;
+}
+.title{
+    display: flex;
+    width:90vw;
+    justify-content: center;
+    font-size: 90px;
+} 
+.titlem{
+    font-size: 60px;
+    color:rgb(11, 10, 10);
+}
+
+
+
+    /* Profile controls */
+
+.backgrnd{
+    background-color: rgba(211, 208, 208, 0.463);
+    height: auto;
+
+
+}
+.profilestyle{
+    height: 100%;
+    background-color: rgba(211, 208, 208, 0.463);
+}
+.pt{
+    padding-bottom: 2vh;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw; /* This ensures the content is centered vertically on the viewport */
+  font-size: 80px;
+  margin-bottom: 0;
+}
+.matches{
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.6fr;
+    justify-content: center;
+    padding-top: 3vh;
+    padding-left: 2vw;
+    width:93vw;
+}
+.titlemw{
+    font-size: 40px;
+}
+.desc{
+    font-size: 20px;
+    background-image: linear-gradient(to right,rgb(236, 87, 87), rgba(165, 13, 13, 0.941));    
+    border-radius: 10px;
+    margin: 0;
+}
+.descw{
+    font-size: 20px;
+    color: black;
+    background-image: linear-gradient(to right,rgb(102, 235, 126), rgba(10, 171, 15, 0.941));    
+    border-radius: 10px;
+    margin: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+.descl{
+    font-size: 20px;
+    color: white;
+
+    background-image: linear-gradient(to right,rgb(240, 54, 54), rgba(165, 13, 13, 0.941));    
+    border-radius: 10px;
+    margin: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+
+}
+p.desc{
+    margin:5px;
+    padding-left: 5px;
+}
+.spec{
+    font-size: larger;
+}
+.stats{
+    padding-left: 2vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+.player-stats{
+    background-image: linear-gradient(to right,rgb(77, 73, 73), rgba(165, 13, 13, 0.941));    border-radius: 10px;
+    display: grid;
+    font-style: italic;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    transition-duration: 500ms;
+    transition-property: font-size;
+}
+.player-stats:hover{
+    font-size: 25px;
+    transition-duration: 500ms;
+    transition-property: font-size;
+}
+
+
+
+
+
+.heads{
+    
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.links{
+    color:black;
+    text-decoration: none;
+    transition-duration: 500ms;
+    transition-property: font-size;
+}
+.links:hover{
+    font-size: 20px;
+    transition-duration: 500ms;
+    transition-property: font-size,text-decoration;
+}
+.plinks{
+    color:black;
+    text-decoration: none;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5vh;
+    transition-duration: 500ms;
+    transition-property: color;
+}
+.plinks:hover{
+    color:white;
+    transition-duration: 500ms;
+    transition-property: color;
+}
+.link{
+    color:black;
+    text-decoration: none;
+    font-size: 60px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5vh;
+}
+li:hover{
+    color:white;
+}
+.link:hover{
+    color:white;
+}
+
+
+.teamwrap{
+    background-image: linear-gradient(to right,rgba(97, 94, 94, 0.744), rgba(101, 100, 100, 0.575));  
+    border-radius: 10px; 
+}
+.duelname{
+    font-size: 35px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw; /* This ensures the content is centered vertically on the viewport */
+  margin: 0; /* Remove default margin */
+}
+.duelmatches{
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-left: 2vw;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.subduelw{
+    background-color: rgba(17, 227, 17, 0.648);
+    font-size: 25px;
+    border-radius: 10px;
+    padding-left: 1vw;
+    margin-bottom: 1vh;
+}
+.subduel{
+    font-size: 30px;
+    background-color: rgba(222, 5, 5, 0.648);
+    border-radius: 10px;
+    padding-left: 1vw;
+    margin-bottom: 1vh;
+}
+.headings{
+    font-size: 30px;
+}
+hr{
+    color: black;
+}
+
+
+.graphs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 5vh;
+
+}
+.graphimg{
+    width: 32vw;
+}
+.graph{
+    width:20vw;
+    height: 20vw;
+}
+.home-wrapper{
+    height: 90vh;
+    width: 100vw;
+    margin-top: 0;
+    margin-left: 5vw;
+}

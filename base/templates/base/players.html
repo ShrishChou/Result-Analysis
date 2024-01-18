@@ -1,0 +1,19 @@
+{% extends 'main.html'%} {% block content%}
+<div>{% include 'base/navbar.html' %}</div>
+<div class="content">
+  <h1 class="heads">Recent Matches</h1>
+  {% for i in players %}
+  <div class="player-stats">
+    <div>
+      <h2><a class="plinks" href="{% url 'profile' i.id%}">{{i.name}}</a></h2>
+    </div>
+    <div>
+      <h3>Wins: {{i.wins}}</h3>
+    </div>
+    <div>
+      <h3>Games played: {{i.game_played}}</h3>
+    </div>
+    <hr />
+  </div>
+</div>
+{% endfor %} {% endblock content %}

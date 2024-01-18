@@ -1,0 +1,46 @@
+{% extends 'main.html'%} {% load static %} {% block content%}
+<div class="home-wrapper">
+  <div class="mainscreen">
+    <h1 class="title">MIT Mens Tennis</h1>
+    <hr />
+    <div class="appeal">
+      <div>
+        <img class="logo-use" src="{% static 'images/logo.png' %}" />
+      </div>
+      <div>
+        <div class="stack">
+          <h2 class="titlem">Explore</h2>
+          {% if request.user.is_authenticated %}
+          <li>
+            <a class="link" href="{% url 'logout'%}">Logout</a>
+          </li>
+          {% endif %}
+          <li>
+            <a class="link" href="{% url 'teamstats' %}">Team stats</a>
+          </li>
+          <li>
+            <a class="link" href="{% url 'players'%}">Players</a>
+          </li>
+          <li>
+            <a class="link" href="https://mitathletics.com/sports/mens-tennis"
+              >MIT Athletics</a
+            >
+          </li>
+          {% if request.user.is_authenticated %}
+          <li>
+            <a class="link" href="{% url 'match-form'%}">Report Match</a>
+          </li>
+          <li>
+            <a class="link" href="{% url 'duel-form'%}">Report Duel</a>
+          </li>
+          {% else %}
+          <li>
+            <a class="link" href="{% url 'login'%}">Login to Report score</a>
+          </li>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
