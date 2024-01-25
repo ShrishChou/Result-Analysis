@@ -12,8 +12,6 @@ from selenium import webdriver
 from io import BytesIO
 from django.template.loader import get_template
 from selenium import webdriver
-from selenium import webdriver
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 import datetime
