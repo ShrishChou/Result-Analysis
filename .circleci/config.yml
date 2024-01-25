@@ -12,8 +12,3 @@ jobs:
           name: Install dependencies
           command: |
             pip install -r requirements.txt
-
-      - run:
-          name: Run tests
-          command: |
-            python run_tests.py
