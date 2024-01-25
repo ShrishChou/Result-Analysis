@@ -1,7 +1,7 @@
 databases:
   - name: resulttracker
     databaseName: mitplayers
-    user: postgres
+    user: admin
 
 services:
   - type: web
