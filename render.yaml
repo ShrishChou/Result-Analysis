@@ -2,6 +2,9 @@ databases:
   - name: resulttracker
     databaseName: mitplayers
     user: postgres
+    password: Shrish05!
+    host: database-1.cpaiqu42o66b.us-west-1.rds.amazonaws.com
+    port: 5432 # Adjust the port if necessary
 
 services:
   - type: web
@@ -12,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         value: "postgres://postgres:Shrish05!@database-1.cpaiqu42o66b.us-west-1.rds.amazonaws.com:5432/mitplayers"
-      - key: django-insecure-@!q0=_kgb1@$p3$wx9z^2c9+*f$7zc9dxacy32cx(^*5n#5zhp
+      - key: SECRET_KEY
         generateValue: true
       - key: WEB_CONCURRENCY
         value: 4
