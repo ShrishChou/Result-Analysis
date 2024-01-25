@@ -2,7 +2,7 @@
 <div>{% include 'base/navbar.html' %}</div>
 <div>
   <form method="POST" action="">
-    {%csrf_token %}
+    {% csrf_token %}
     <label>Username:</label>
     <input type="text" name="username" placeholder="Enter Username" />
 

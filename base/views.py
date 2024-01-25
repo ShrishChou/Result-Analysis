@@ -39,32 +39,27 @@ def players(request):
 def generate_graph(data, attribute):
     matplotlib.use('Agg')
     sorted_data = sorted(data, key=lambda x: datetime.strptime(x['date'], '%Y-%m-%d'))
-
-    # Your graph generation logic using Matplotlib
     dates = [entry['date'] for entry in sorted_data]
     values = [entry[attribute] for entry in sorted_data]
-    font_family = 'Arial'  # You can change this to a different available font
-
+    font_family = 'Arial'  
     with plt.xkcd():
-        # Plot directly using plt
-        plt.rcParams['font.family'] = font_family  # Set the font family
+        plt.rcParams['font.family'] = font_family  
 
         plt.figure(figsize=(8, 6))
         plt.plot(dates, values, marker='o', linestyle='-', label=f'{attribute.capitalize()} Data')
         plt.xlabel('Date')
-        plt.ylabel(attribute.capitalize())  # Use capitalized attribute as the y-axis label
+        plt.ylabel(attribute.capitalize())  
         plt.title(f'{attribute.capitalize()} over Time')
-        plt.legend()  # Add legend for the line
+        plt.legend()  
 
-        # Save the graph to a BytesIO object
+
         graph_image = BytesIO()
         plt.savefig(graph_image, format='png')
         graph_image.seek(0)
 
-        # Encode the graph image to base64
         encoded_image = base64.b64encode(graph_image.read()).decode('utf-8')
 
-        plt.close()  # Close the figure to avoid resource leaks
+        plt.close()  
     
     return encoded_image
 
@@ -73,7 +68,7 @@ def profile(request,pk):
     utr_data = player.data
     high_data = player.data
     low_data = player.data
-
+    # add_dat = player.data
     utr_graph = generate_graph(utr_data, 'utr')
     high_graph = generate_graph(high_data, 'high')
     low_graph = generate_graph(low_data, 'low')
@@ -94,13 +89,13 @@ def profile(request,pk):
              "doubleswins":doubles_wins,
              "matches_played":matches_played,
              'utr_graph': utr_graph,
-        'high_graph': high_graph,
-        'low_graph': low_graph,
+            'high_graph': high_graph,
+            'low_graph': low_graph,
              }
     
     return render(request,'base/profile.html',context)
 
-
+    # add ing img Clinician Profile DAO 
 def loginPage(request):
     page = "login"
     if request.user.is_authenticated:
@@ -131,7 +126,6 @@ def logDuel(request):
         doubles_formset = DoublesMatchInlineFormSet(request.POST, prefix='doubles')
 
         if duel_form.is_valid() and singles_formset.is_valid() and doubles_formset.is_valid():
-            # Process the forms
             duel_instance = duel_form.save()
             singles_formset.instance = duel_instance
             singles_formset.save()
@@ -153,7 +147,6 @@ def logMatch(request):
         doubles_formset = DoublesMatchInlineForm(request.POST, prefix='doubles')
 
         if duel_form.is_valid() and singles_formset.is_valid() and doubles_formset.is_valid():
-            # Process the forms
             duel_instance = duel_form.save()
             singles_formset.instance = duel_instance
             singles_formset.save()
