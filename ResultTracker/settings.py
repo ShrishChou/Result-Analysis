@@ -15,6 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+CSRF_COOKIE_SECURE = True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -25,7 +26,11 @@ SECRET_KEY = "django-insecure-@!q0=_kgb1@$p3$wx9z^2c9+*f$7zc9dxacy32cx(^*5n#5zhp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+        'https://d4f9-2601-641-300-7910-3114-3dac-9b3d-34b9.ngrok-free.app',
+        'd4f9-2601-641-300-7910-3114-3dac-9b3d-34b9.ngrok-free.app',
+        'https://71a0-2601-641-300-7910-3114-3dac-9b3d-34b9.ngrok-free.app',
+]
 
 
 # Application definition
@@ -77,8 +82,14 @@ WSGI_APPLICATION = "ResultTracker.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        # "ENGINE": "django.db.backends.sqlite3",
+        # "NAME": BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mitplayers',
+        'USER': 'mitmen',
+        'PASSWORD': 'mitmenstennis2024',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

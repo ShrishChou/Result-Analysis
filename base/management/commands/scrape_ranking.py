@@ -2,8 +2,6 @@ import datetime
 from django.core.management.base import BaseCommand
 from base.models import Player
 from base.scraper import scraping ,scrapingutr 
-import time
-from selenium import webdriver
 
 class Command(BaseCommand):
     help = 'Scrape player rankings and update the data attribute'
