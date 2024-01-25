@@ -1,0 +1,21 @@
+databases:
+  - name: resulttracker
+    databaseName: mitplayers
+    user: ShrishChoudhary
+    password: Shrish05!
+    host: database-1.cpaiqu42o66b.us-west-1.rds.amazonaws.com
+    port: 5432 # Adjust the port if necessary
+
+services:
+  - type: web
+    name: resulttracker
+    runtime: python
+    buildCommand: "./build.bat" # Adjust the build command for Windows
+    startCommand: "gunicorn resulttracker.wsgi:base"
+    envVars:
+      - key: DATABASE_URL
+        value: "postgres://ShrishChoudhary:Shrish05!@database-1.cpaiqu42o66b.us-west-1.rds.amazonaws.com:5432/mitplayers"
+      - key: django-insecure-@!q0=_kgb1@$p3$wx9z^2c9+*f$7zc9dxacy32cx(^*5n#5zhp
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
