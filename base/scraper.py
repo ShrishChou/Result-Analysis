@@ -50,8 +50,8 @@ def scrapingutr(url):
     time.sleep(wait_time)
     email_field = driver.find_element(By.ID, 'emailInput')  # Replace with the actual attribute
     password_field = driver.find_element(By.ID, 'passwordInput')  # Replace with the actual attribute
-    email_field.send_keys('Pankaj1970@gmail.com')
-    password_field.send_keys('Shrish@2005')
+    email_field.send_keys('') # redacted for safety purposes
+    password_field.send_keys('')# redacted for safety purposes
     submit_button = driver.find_element(By.XPATH, '//button[text()="SIGN IN"]')
     submit_button.click()
 
